@@ -22,7 +22,7 @@ Answer the question based on the above context: {question}
 def main():
     # create CLI.
     parser = argparse.ArgumentParser()
-    parser.add_argument("query_text", type=str, help="The query text.")
+    parser.add_argument("query_text", type=str, help="Type question.")
     args = parser.parse_args()
     query_text = args.query_text
     query_rag(query_text)
