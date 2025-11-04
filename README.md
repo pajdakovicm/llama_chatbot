@@ -7,11 +7,9 @@ This is a Retrieval-Augmented Generation (RAG) chatbot that can answer questions
 - Ollama installed locally
 - At least 8GB RAM recommended
 
-### 1. Install Ollama
+### 1. Install Ollama and pull required models 
 
 Follow the instructions for ollama installation from their official repository: https://github.com/ollama/ollama. We installed llama 3.2 model in this project. 
-
-### 2. Pull Required Models
 
 ```bash
 # Pull the embedding model
@@ -21,7 +19,7 @@ ollama pull nomic-embed-text
 ollama pull llama3.2
 
 
-## 3. Install Python dependencies 
+### 2. Install Python dependecies
 
 ```python
 pip install -r requirements.txt
