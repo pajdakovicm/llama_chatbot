@@ -43,27 +43,16 @@ python3 query_data.py "What is the goal of codenames?"
 
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant A as Application
-    participant C as ChromaDB
-    participant O as Ollama
+graph TD
+    A[PDF Documents] --> B[Text Extraction]
+    B --> C[Chunking] 
+    C --> D[Embeddings]
+    D --> E[ChromaDB]
     
-    Note over A: Data Ingestion Phase
-    A->>A: Load PDF documents
-    A->>A: Extract and chunk text
-    A->>O: Generate embeddings (nomic-embed-text)
-    O-->>A: Return vectors
-    A->>C: Store vectors in ChromaDB
-    
-    Note over A: Query Phase
-    U->>A: Submit question
-    A->>O: Generate query embedding
-    O-->>A: Return query vector
-    A->>C: Semantic similarity search
-    C-->>A: Return top K documents
-    A->>A: Construct prompt with context
-    A->>O: Generate answer (llama3.2)
-    O-->>A: Return generated answer
-    A-->>U: Display final response
+    F[User Query] --> G[Embedding]
+    G --> H[Semantic Search]
+    E --> H
+    H --> I[Context + Prompt]
+    I --> J[LLM]
+    J --> K[Answer]
 ```
