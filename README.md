@@ -42,10 +42,11 @@ python3 query_data.py "What is the goal of codenames?"
 ```
 
 
+```mermaid
 graph TD
     A[PDF Documents] --> B[Text Extraction]
     B --> C[Chunking] 
-    C --> D[Embeddings<br/>model: nomic-embed-textß]
+    C --> D[Embeddings<br/>model: nomic-embed-text]
     D --> E[ChromaDB]
     
     F[User Query] --> G[Embedding<br/>model: nomic-embed-text]
@@ -54,3 +55,4 @@ graph TD
     H --> I[Context + Prompt]
     I --> J[LLM Generation<br/>model: llama3.2]
     J --> K[Answer]
+```
