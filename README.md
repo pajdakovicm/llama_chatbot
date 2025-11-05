@@ -19,7 +19,7 @@ ollama pull nomic-embed-text
 ollama pull llama3.2
 
 
-### 2. Install Python dependecies
+## 2. Install Python dependecies
 
 ```python
 pip install -r requirements.txt
@@ -49,10 +49,10 @@ graph TD
     C --> D[Embeddings]
     D --> E[ChromaDB]
     
-    F[User Query] --> G[Embedding]
+    F[User Query] --> G[Embedding (model: nomic-embed-text)]
     G --> H[Semantic Search]
     E --> H
     H --> I[Context + Prompt]
-    I --> J[LLM]
+    I --> J[LLM (model: llama 3.2)]
     J --> K[Answer]
 ```
