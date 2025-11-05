@@ -41,6 +41,7 @@ Query the Chroma DB.
 python3 query_data.py "What is the goal of codenames?"
 ```
 
+## Solution Diagram 
 
 ```mermaid
 graph TD
